@@ -1,0 +1,49 @@
+%%preambulo
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb,amsfonts,indentfirst}
+\usepackage[centertags]{amsmath}
+\usepackage{enumerate,multicol,subfig,cancel,makeidx,emptypage}
+\usepackage{tikz}
+  \usetikzlibrary{calc,positioning,shapes.geometric}
+
+% Mantém as expressões matemáticas sempre no tamanho normal
+\everymath{\displaystyle}
+% Define o caminho das figuras. V\'alido somente para o comando \includegraphics
+\graphicspath{{figuras/}}
+
+%Definindo novos comandos
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\textrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\textrm{tg}}
+\newcommand{\graus}{\textrm{\ensuremath{^\circ}}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\asp}[1]{``#1''}		%aspas
+\newcommand{\mei}{\leqslant} 		%menor ou igual
+\newcommand{\mai}{\geqslant} 		%maior ou igual
+\newcommand{\imp}{\Rightarrow} 		%implica
+\newcommand{\volta}{\Leftarrow} 	%volta
+\newcommand{\sse}{\Leftrightarrow} 	%se s\'o se
+\newcommand{\vz}{\emptyset} 		%conjunto vazio
+\newcommand{\br}[1]{\overline{#1}} 	%barra geral
+
+%Figuras
+\newcommand{\myfig}[3][width=5cm]{
+    \begin{figure}[!htb]
+      \centering
+      \includegraphics[#1]{figuras/#2}
+      \caption{#3}\label{#2}
+    \end{figure}
+}
+
+%Figuras feitas com TikZ
+\newcommand{\tkzfig}[2]{
+    \begin{figure}[!htb]
+      \centering
+      \input{figuras/#1}
+      \caption{#2}\label{#1}
+    \end{figure}
+}
