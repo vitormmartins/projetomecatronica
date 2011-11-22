@@ -1,0 +1,3 @@
+\begin{tikzpicture}
+	\shade[ball color=yellow] circle (1);
+\end{tikzpicture}
