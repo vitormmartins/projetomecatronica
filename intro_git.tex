@@ -1,0 +1,237 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[margin=3cm]{geometry}
+\usepackage{xcolor,showexpl}	%exibe os codigos
+\usepackage{hyperref}
+
+\usepackage{listings}
+\lstset{explpreset={
+    language=bash,
+    float=hbp,
+    basicstyle=\ttfamily\small, 
+    identifierstyle=\color{white}, 
+    keywordstyle=\color{white}, 
+    stringstyle=\color{white}, 
+    commentstyle=\color{white}, 
+    columns=flexible, 
+    tabsize=4, 
+    frame=none,   %%frame=single
+    rframe={}
+    },
+    language=bash,
+    basicstyle=\ttfamily\small, 
+    identifierstyle=\color{white}, 
+    keywordstyle=\color{white}, 
+    stringstyle=\color{white}, 
+    commentstyle=\color{white}, 
+    hsep=10mm,
+    extendedchars=true, 
+    showspaces=false, 
+    showstringspaces=false, 
+    numbers=none,  %%numbers=left
+    %numberstyle=\tiny, 
+    breaklines=true, 
+    backgroundcolor=\color{gray}, 
+    breakautoindent=true, 
+    captionpos=b,
+    xleftmargin=0pt,
+}
+
+\title{git tutorial}
+\author{R\'egis da Silva Santos}
+\date{21 de dezembro de 2011}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introdução ao git}
+
+% \texttt{joaopcop@gmail.com}
+
+% todos os paragrafos sem identação
+\setlength\parindent{0pt}
+
+Veja no site a seguir como \emph{instalar} e \emph{configurar} o \textbf{git}:
+
+\url{http://codexico.com.br/blog/linux/tutorial-simples-como-usar-o-git-e-o-github/}
+
+Leia também \url{http://progit.org}.
+
+Para começar o git abra o \emph{terminal} na pasta do seu repositório, por exemplo, \emph{meugit}.
+
+iniciando o git
+\begin{lstlisting}
+git init
+\end{lstlisting}
+
+mostrando o estado do repositório
+\begin{lstlisting}
+git status
+\end{lstlisting}
+
+comentário inicial do repositório
+\begin{lstlisting}
+git commit
+\end{lstlisting}
+
+comentários
+\begin{lstlisting}
+git commit --allow-empty commit -m ``vazio''
+git commit -a -m ``comentario''
+\end{lstlisting}
+
+mostrando o histórico de commits
+\begin{lstlisting}
+git log
+\end{lstlisting}
+
+configuração
+\begin{lstlisting}
+git config --global user.name ``seu nome''
+git config --global user.email ``seu email''
+\end{lstlisting}
+
+\subsection*{Criando e adicionado o primeiro arquivo}
+
+Agora vamos criar um arquivo qualquer e verificar seu status
+\begin{lstlisting}
+touch arquivo01
+git status
+\end{lstlisting}
+
+Usando a opção \verb|-s| podemos ver que o arquivo foi adicionado e modificado
+\begin{lstlisting}
+git status -s
+\end{lstlisting}
+
+\textbf{Adicionando} o arquivo efetivamente no repositório
+\begin{lstlisting}
+git add arquivo01
+\end{lstlisting}
+
+Adicionando \textbf{todos} os arquivos
+\begin{lstlisting}
+git add -A
+\end{lstlisting}
+
+Comentando
+\begin{lstlisting}
+git commit -m ``mensagem''
+\end{lstlisting}
+
+\subsection*{Chave}
+
+Chave pública
+\begin{lstlisting}
+ssh-keygen -t rsa
+\end{lstlisting}
+
+A chave encontra-se na pasta \emph{HOME/.ssh/id\_rsa.pub}.
+
+\subsection*{Clonando repositório}
+
+Repositórios a serem clonados
+\begin{lstlisting}
+git clone git@github.com:vitormmartins/projetomecatronica.git
+git clone git@github.com:rg3915/LaTeX.git
+\end{lstlisting}
+
+\textbf{Baixando} as atualizações do projeto
+\begin{lstlisting}
+git pull
+\end{lstlisting}
+
+\textbf{Enviando} as alterações
+\begin{lstlisting}
+git push
+\end{lstlisting}
+
+ou
+\begin{lstlisting}
+git push  origin master
+\end{lstlisting}
+
+Adicionando repositório
+\begin{lstlisting}
+git remote add origin git@github.com:vitormmartins/projetomecatronica.git
+\end{lstlisting}
+
+\subsection*{Tags}
+
+Criando tag
+\begin{lstlisting}
+git tag -a v1.0 -m 'versao 1.0'
+git push --tags
+\end{lstlisting}
+
+Deletando tag
+\begin{lstlisting}
+git tag -d v1.0
+git push origin :refs/tags/v1.0
+\end{lstlisting}
+
+\subsection*{Branchs}
+
+Criando branch
+\begin{lstlisting}
+git branch mybranch
+\end{lstlisting}
+
+Mudando de branch
+\begin{lstlisting}
+git checkout mybranch
+git status
+\end{lstlisting}
+
+Mostrando os arquivos do \emph{master}
+\begin{lstlisting}
+git checkout master
+\end{lstlisting}
+
+Mostrando novamente os arquivos do \emph{mybranch}
+\begin{lstlisting}
+git checkout mybranch
+\end{lstlisting}
+
+Voltando para o \emph{git master}
+\begin{lstlisting}
+git checkout master
+\end{lstlisting}
+
+Mostrando todas as branch
+\begin{lstlisting}
+gitk --all
+\end{lstlisting}
+
+\newpage 
+
+Como juntar as branch na \emph{master}?
+\begin{lstlisting}
+git merge master
+\end{lstlisting}
+
+Colocando branch no mesmo nível
+\begin{lstlisting}
+git rebase mybranch
+\end{lstlisting}
+
+Resolvendo conflito de merge
+\begin{lstlisting}
+git mergetool
+\end{lstlisting}
+
+\subsection*{visualizador gráfico do repositório}
+
+\begin{lstlisting}
+gitk
+\end{lstlisting}
+
+Caso não esteja instalado você pode instala-lo pelo apt
+\begin{lstlisting}
+sudo apt-get install gitk
+\end{lstlisting}
+
+\end{document}
