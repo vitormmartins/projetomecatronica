@@ -1,8 +1,23 @@
-\documentclass[a4paper]{memoir}
+\documentclass[a4paper,12pt]{memoir}
 \usepackage[utf8]{inputenc}
 \usepackage{preambulo}
 
+% estilo de capitulo
+\corpedersen
+\chapterstyle{pedersen}
+
+\title{Projeto Mecatr\^onica}
+\author{Vitor M. Martins\\ R\'egis S. Santos}
+\date{}
+\newcommand{\subtitle}{Notas de Aula do Curso PME2321}
+%***************************************
 \begin{document}
+
+\begin{titlingpage}
+  \maketitle
+\end{titlingpage}
+
+\tableofcontents
 
 \chapter{Introdução}
 
@@ -11,9 +26,13 @@
 %{figura}{caption}
 \myfig{latex}{Figura jpg}
 
-\lipsum[2-4]
+\lipsum[2-7]
 
 %{figura}{caption}
 \tkzfig{bola}{Figura TikZ}
+
+\section{Seção}
+
+\lipsum[1-10]
 
 \end{document}
