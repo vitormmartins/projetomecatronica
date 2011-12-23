@@ -1,0 +1,14 @@
+2a Lei da Termodinamica p/ Volume de Controle
+
+- expressao
+- regime permanente
+- regime transiente
+- trabalho associado ao escoamento de um fluido em regime permanente
+- eficiencia isentropica
+
+2a lei p/ volume de controle
+
+casos particulares: regime permanente
+
+regime uniforme: nós integramos desde o estado inicial até o estado final.
+hipótese: estados constantes nas entradas e saídas do meu sistema
