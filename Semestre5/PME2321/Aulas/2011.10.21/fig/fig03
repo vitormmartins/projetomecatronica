@@ -1,0 +1,26 @@
+%bibliotecas
+\usetikzlibrary{patterns}
+%Define uma nova hachura de preenchimento com espa\c{c}amento diferente
+\pgfdeclarepatternformonly{hachura}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{10pt}{10pt}}{\pgfqpoint{9pt}{9pt}}%
+{
+  \pgfsetlinewidth{0.4pt}
+  \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+  \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+  \pgfusepath{stroke}
+}
+\begin{tikzpicture}[>=latex]
+%caixa de ar
+\draw[very thick] (0,2.5) -- ++(0,-2.5) -- ++(2,0) -- ++(0,2.5);
+\draw[very thick,pattern=hachura,pattern color=blue] (.1,1.7) rectangle ++(2-.2,.3);
+\node at (1,1) {Ar};
+\node (n1) at (1,-1.2) {$T_2 = 500\,K$};
+%flecha
+\draw[->,very thick] (1,0) to[bend left] (n1);
+\node at (1,3) {$T_0 = 300\,K$};
+%retangulo
+\draw[very thick,pattern=hachura,pattern color=blue] (-3,0) rectangle ++(.5,2.5);
+%flecha
+\draw[->,very thick] (-2.4,1.25) -- node[above] {$Q_{1 \Rightarrow 2}$} ++(2,0);
+\node at (-3+.25,3) {$T_r = 325^\circ C$};
+\node[text width=2.5cm] at (-2,-1) {$T_1 = 300\,K$\\ $P_1 = 100\,kPa$};
+\end{tikzpicture}

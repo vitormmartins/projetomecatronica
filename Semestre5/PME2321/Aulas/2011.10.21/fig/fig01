@@ -1,0 +1,35 @@
+%bibliotecas
+\usetikzlibrary{shapes.arrows,shapes.geometric,decorations.markings}
+\begin{tikzpicture}
+%estilos
+\tikzset{>=latex,
+	hmin/.style={minimum height=5mm},
+	canto suave/.style=rounded corners,
+	flecha/.style=single arrow,single arrow head extend=1mm,minimum height=15mm,
+	flecha1/.style={decoration={markings, mark=at position 0.75 with {\arrow{>}}},postaction={decorate}}
+}
+%mina de sal (n1)
+\node[draw,canto suave,text width=3cm,align=center] (n1) at (0,5) {Mina de sal abandonada};
+%compressor (n2)
+\node[draw,trapezium,scale=.35,rotate=90,trapezium right angle=45,trapezium left angle=45] (n2) at (4.5,3.5) {};
+\node[right=3mm,text width=2cm] at (4.5,3.5) {compressor de ar};
+%linha
+\draw[very thick] (n1) -| (n2);
+\draw[very thick] (3,5-.2) -- ++(0,4mm) node[above=-3mm] {$P_s = 2,1\,Mpa$};
+%n3
+\node[text width=25mm,minimum height=1cm,anchor=west] (n3) at (4.5,1.5) {$T_e = 290\,K$ $P_e = 100\,kPa$};
+\draw[flecha1,|-,very thick] (n3.north west) -- (n2);
+%n4
+\node[minimum height=0] (n4) at (2.5,2.5) {enchimento};
+%arcos
+\draw[->] (n2) to[bend right] (n4);
+%n5
+\node[draw,hmin,canto suave] (n5) at (4.5,0) {$P_2 = 2,9\,Mpa$};
+\draw[->] (n4) to[bend right] (n5);
+%flecha
+\node[draw,fill=red,flecha,rotate=180] at (2,0) {};
+\node[above=-2mm] at (2,0) {troca de};
+\node[below=-2mm] at (2,0) {calor};
+\node[draw,hmin,canto suave] {$T_3 = 400\,K$};
+\node[text width=3cm] at (0,2.5) {$V = 100.000\,m^3$ $P_i = 100\,kPa$ $T_i = 250\,K$};
+\end{tikzpicture}
