@@ -31,5 +31,5 @@
 \node[above=-2mm] at (2,0) {troca de};
 \node[below=-2mm] at (2,0) {calor};
 \node[draw,hmin,canto suave] {$T_3 = 400\,K$};
-\node[text width=3cm] at (0,2.5) {$V = 100.000\,m^3$ $P_i = 100\,kPa$ $T_i = 250\,K$};
+\node[text width=3cm] at (0,2.5) {$V = 100.000\,m^3$\\ $P_i = 100\,kPa$\\ $T_i = 250\,K$};
 \end{tikzpicture}
