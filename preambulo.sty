@@ -6,7 +6,7 @@
 \usepackage{enumerate,multicol,subfig,cancel,makeidx,emptypage}
 \usepackage{color,graphicx,hyperref,booktabs}
 \usepackage{tikz}
-  \usetikzlibrary{calc,positioning,shapes.geometric}
+  \usetikzlibrary{calc,positioning,patterns,shapes.arrows,shapes.geometric,decorations.markings}
 \usepackage{lipsum}
 
 % Mantém as expressões matemáticas sempre no tamanho normal
@@ -114,7 +114,17 @@
 \newcommand{\tkzfig}[2]{
     \begin{figure}[!htb]
       \centering
-      \input{figuras/#1}
+      \input{fig/#1}
       \caption{#2}\label{#1}
     \end{figure}
+}
+
+%*********************************************************************
+%Define uma nova hachura de preenchimento com espa\c{c}amento diferente
+\pgfdeclarepatternformonly{hachura}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{10pt}{10pt}}{\pgfqpoint{9pt}{9pt}}%
+{
+  \pgfsetlinewidth{0.4pt}
+  \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+  \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+  \pgfusepath{stroke}
 }
