@@ -1,0 +1,134 @@
+%%preambulo
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb,amsfonts,indentfirst}
+\usepackage[centertags]{amsmath}
+\usepackage{enumerate,multicol,subfig,cancel,makeidx,emptypage}
+\usepackage{color,graphicx,hyperref,booktabs}
+\usepackage{tikz}
+  \usetikzlibrary{calc,positioning,patterns,shapes.arrows,shapes.geometric,decorations.markings}
+\usepackage{lipsum}
+
+% Mantém as expressões matemáticas sempre no tamanho normal
+\everymath{\displaystyle}
+% Define o caminho das figuras. V\'alido somente para o comando \includegraphics
+\graphicspath{{figuras/}{fig/}}
+
+% Define novas cores
+\definecolor{ared}{rgb}{.647,.129,.149}
+
+% pedersen - requer os pacotes color,graphicx
+% corpedersen significa cor para \chapterstyle{pedersen}
+\newcommand{\corpedersen}[1][ared]{
+  \renewcommand\colorchapnum{\color{#1}}
+  \renewcommand\colorchaptitle{\color{#1}}
+}
+
+%pre-titulo
+\pretitle{\begin{center}
+           \begin{Huge}
+            \scshape
+}
+%pos-titulo
+\posttitle{\end{Huge}
+	    \\[1cm]
+	    \sffamily \Large \subtitle
+          \end{center}
+}
+
+\renewcommand{\maketitlehooka}{\vfill}
+\renewcommand{\maketitlehookb}{\vfill}
+
+% Configuracao de cabecalho personalizado para memoir
+\copypagestyle{mystyle}{headings}
+\makeevenhead{mystyle}{\slshape\leftmark}{}{}
+\makeoddhead{mystyle}{}{}{\slshape\rightmark}
+% numero de pagina no rodape centralizado
+\makeoddfoot{mystyle}{}{\thepage}{}
+\makeevenfoot{mystyle}{}{\thepage}{}
+% remove 'capitulo' do mystyle
+\addtopsmarks{mystyle}{}{
+  \createmark{chapter}{both}{shownumber}{}{. \space}
+}
+% fix plain
+\copypagestyle{plain}{mystyle} % sobrescreve plain com mystyle
+\makeoddhead{plain}{}{}{} % remove cabecalho da direita
+\makeevenhead{plain}{}{}{} % remove cabecalho da esquerda
+\makeheadrule{plain}{0pt}{0pt} % remove linha
+\pagestyle{mystyle}
+% define secao com letra minuscula
+\renewcommand\sectionmark[1]{\markright{\thesection\ #1}}
+
+% sem numero de pagina no sumario
+\makeatletter
+\renewcommand{\cfttocbeforelisthook}{\pagestyle{empty}\let\ps@plain\ps@empty}
+\renewcommand{\cfttocafterlisthook}{\cleardoublepage\pagestyle{headings}}
+\makeatother
+
+%*********************************************************************
+% Definindo novos ambientes
+\usepackage{theorem}
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{cor}[teo]{Corol\'ario}
+\newtheorem{lem}[teo]{Lema}
+\newtheorem{prop}[teo]{Proposi\c{c}\~ao}
+\newtheorem{axi}[teo]{Axioma}
+\newtheorem{fato}[teo]{Fato}
+\theorembodyfont{\normalfont\upshape}
+\newtheorem{ex}{Exemplo}[chapter]
+\newtheorem{Exerc}{Ex}[chapter]
+\newtheorem{defn}[teo]{Defini\c{c}\~ao}
+% Ambiente para resolucao de exercicios.
+\newenvironment{sol}[1][Solu\c c\~ao]{\textbf{\textsf{#1}}:\\ \indent} {\hfill $\Box$}
+
+%*********************************************************************
+% Definindo novos comandos
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\textrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\textrm{tg}}
+\newcommand{\graus}{\textrm{\ensuremath{^\circ}}}
+\newcommand{\po}{\textordmasculine}	%primeiro
+\newcommand{\pa}{\textordfeminine}	%primeira
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\asp}[1]{``#1''}		%aspas
+\newcommand{\mei}{\leqslant} 		%menor ou igual
+\newcommand{\mai}{\geqslant} 		%maior ou igual
+\newcommand{\imp}{\Rightarrow} 		%implica
+\newcommand{\volta}{\Leftarrow} 	%volta
+\newcommand{\sse}{\Leftrightarrow} 	%se s\'o se
+\newcommand{\vz}{\emptyset} 		%conjunto vazio
+\newcommand{\br}[1]{\overline{#1}} 	%barra geral
+
+%Lower horizontal brace. Exemplo: n.n.n.n ->  n vezes.
+\newcommand{\ubrace}[2]{\underbrace {#1}_{#2}}
+
+%Figuras
+\newcommand{\myfig}[3][width=5cm]{
+    \begin{figure}[h]
+      \centering
+      \includegraphics[#1]{#2}
+      \caption{#3}\label{#2}
+    \end{figure}
+}
+
+%Figuras feitas com TikZ
+\newcommand{\tkzfig}[2]{
+    \begin{figure}[!htb]
+      \centering
+      \input{fig/#1}
+      \caption{#2}\label{#1}
+    \end{figure}
+}
+
+%*********************************************************************
+%Define uma nova hachura de preenchimento com espa\c{c}amento diferente
+\pgfdeclarepatternformonly{hachura}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{10pt}{10pt}}{\pgfqpoint{9pt}{9pt}}%
+{
+  \pgfsetlinewidth{0.4pt}
+  \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+  \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+  \pgfusepath{stroke}
+}
