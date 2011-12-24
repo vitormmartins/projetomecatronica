@@ -43,8 +43,9 @@
 \copypagestyle{mystyle}{headings}
 \makeevenhead{mystyle}{\slshape\leftmark}{}{}
 \makeoddhead{mystyle}{}{}{\slshape\rightmark}
-\makeoddfoot{mystyle}{}{}{\thepage}
-\makeevenfoot{mystyle}{\thepage}{}{}
+% numero de pagina no rodape centralizado
+\makeoddfoot{mystyle}{}{\thepage}{}
+\makeevenfoot{mystyle}{}{\thepage}{}
 % remove 'capitulo' do mystyle
 \addtopsmarks{mystyle}{}{
   \createmark{chapter}{both}{shownumber}{}{. \space}
@@ -100,6 +101,9 @@
 \newcommand{\sse}{\Leftrightarrow} 	%se s\'o se
 \newcommand{\vz}{\emptyset} 		%conjunto vazio
 \newcommand{\br}[1]{\overline{#1}} 	%barra geral
+
+%Lower horizontal brace. Exemplo: n.n.n.n ->  n vezes.
+\newcommand{\ubrace}[2]{\underbrace {#1}_{#2}}
 
 %Figuras
 \newcommand{\myfig}[3][width=5cm]{
