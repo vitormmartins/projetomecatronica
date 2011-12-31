@@ -1,0 +1,53 @@
+2 Listas de exercicios
+capitulo 2 -> Mecânica de Corte de Metais 
+pg.4-62
+
+1- Mecânica do Corte Ortogonal
+2- Modelagem mecanica das forças de corte (dinamometria)
+3- Predição teórica do ângulo de cisalhamento (Shear angle)
+4- Mecânica do corte oblíquo
+	-Geometria do corte oblíquo;
+	-Predição das forças de corte; 
+	-
+5- Mecânica do processo de torneamento (Torning);
+6- Mecânica do processo de fresamento (Milling);
+	- Mecânica das fresas de topo helicoidais (Helical End Mills)
+7- Modelagem analítica das forças de fresamento de topo (End Milling)
+8- Identificação mecanística das constantes de corte no fresamento
+9- Mecânica do processo de furação (drilling)
+10- Desgaste de Ferramenta (Tool Wear) -> Eq de Taylor
+11- Quebra-avaro de ferramenta (Tool Breakage)
+
+Capitulo 3 - Deformaçãoes Estáticas e dinâmicas em usinagem
+
+Introdução: fazer peças nano (sensor), fazer máquinas ferramenta
+capitulo 3 do Altintas é muito importante para o curso -> pega Vibrações
+e Usinagem juntos
+
+1 - Estrutura de máquinas ferramentas (Machine Tool)
+2 - Erros de forma dimensionais na usinagem
+	- Erros de forma no torneamento cilíndrico;
+	- Ferramenta/barra de furação por torneamento interno (Boring bar)
+	- Erros de forma no fresamento de topo (End Milling)
+3 - Vibrações estruturais na usinagem (Machining)
+
+4 - Vibrações Estruturais em usinagem
+ - Fundamentos de vibrações fraca/forçada
+ - Funções de transferência orientadas
+ - Sistema de coordenadas de medição e concepção (projeto)
+ - Análise modal analitica de sistemas com multiplos graus de liberdade
+
+Observação Desafio da GM (General Motors ) para o dia 7/11.
+Lista de exercicios cap2 do altintas para depois de Finados.
+Lista de exercicios cap3 do altintas para proximo da P2 em novembro
+
+5 - Trepidação (vibração forçada admexcitada) no corte ortogonal
+|-> Chattering/Chatter
+ 
+6 Predição analítica de trepidação no fresamento
+	- Dinâmica do fresamento;
+	- Lóbulo de estabilidade;
+ - 
+
+
+	
