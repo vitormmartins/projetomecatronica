@@ -1,0 +1,38 @@
+%bibliotecas
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes.arrows}
+%Define uma nova hachura de preenchimento com espa\c{c}amento diferente
+\pgfdeclarepatternformonly{hachura}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{10pt}{10pt}}{\pgfqpoint{9pt}{9pt}}%
+{
+  \pgfsetlinewidth{0.4pt}
+  \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+  \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+  \pgfusepath{stroke}
+}
+\pgfdeclarepatternformonly{hachura2}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{10pt}{10pt}}{\pgfqpoint{9pt}{9pt}}%
+{
+  \pgfsetlinewidth{0.4pt}
+  \pgfpathmoveto{\pgfqpoint{0pt}{9.1pt}}
+  \pgfpathlineto{\pgfqpoint{9.1pt}{0pt}}
+  \pgfusepath{stroke}
+}
+%estilos
+\tikzset{>=latex,
+	flecha/.style=single arrow,single arrow head extend=1mm,minimum height=10mm
+}
+\begin{tikzpicture}[scale=1.5]
+\draw (0,1)-- (5,1);
+\draw (0,3)-- (5,3);
+\draw (1,4) node[above] {$+$}-- (1,2)-- (3,2)-- (3,4) node[above] {$-$};
+\fill[very thick,pattern=hachura2,pattern color=blue] (.2,1) rectangle ++(4.4,-.2);
+\fill[very thick,pattern=hachura2,pattern color=blue] (.2,3) rectangle ++(4.4,.2);
+%flechas
+\node[draw,flecha] at (0,2) {};
+\node[draw,flecha] at (4.5,2) {};
+\node[draw,flecha,rotate=180,single arrow head extend=.5mm,minimum height=5mm] at (3.4,3.7) {};
+%textos
+\node[above left] at (0,2) {\scriptsize Ar a $15^\circ C$};
+\node[below right] at (0,2) {\scriptsize $1$ atm};
+\node[above right] at (4.5,2) {\scriptsize Ar a $25^\circ C$};
+\node[right] at (3.5,3.7) {\scriptsize $T = 127^\circ C$};
+\end{tikzpicture}
