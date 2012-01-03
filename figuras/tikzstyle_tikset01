@@ -1,0 +1,3 @@
+\begin{tikzpicture}[every node/.style={black,font=\scriptsize}]
+	\fill[blue] (0,0) circle (2pt) node[above] {$\gamma(a)$};
+\end{tikzpicture}
