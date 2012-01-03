@@ -1,0 +1,41 @@
+%bibliotecas
+\usetikzlibrary{patterns,shapes.arrows,shapes.geometric,decorations.markings}
+%Define uma nova hachura de preenchimento com espa\c{c}amento diferente
+\pgfdeclarepatternformonly{hachura}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{10pt}{10pt}}{\pgfqpoint{9pt}{9pt}}%
+{
+  \pgfsetlinewidth{0.4pt}
+  \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+  \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+  \pgfusepath{stroke}
+}
+%estilos
+\tikzset{>=latex,
+	every node/.style={font=\scriptsize},
+	canto suave/.style=rounded corners,
+	flecha/.style=single arrow,single arrow head extend=1mm,minimum height=10mm}
+\begin{tikzpicture}[thick]
+\draw (0.1,0.1) rectangle ++(1.7,1.7);
+\draw (4.5,1.9) rectangle (6.6,3.5);
+\draw[pattern=hachura,pattern color=blue] (4.5,3.5) rectangle (6.6,4);
+\draw (4.5,4.5)-- (4.5,4);
+\draw (6.6,4.5)-- (6.6,4);
+%flecha
+\node[draw,flecha] at (2.5,.5) {};
+\node[above] at (2.5,.5) {m ponto};
+\draw (1.8,0.6)-- (3.6,0.6);
+%triangulo
+\draw (3.6,0.4)-- (3.6,0.8)-- (4.5,0.4)-- (4.5,0.8)-- (3.6,0.4);
+
+\draw (4.5,0.6)-- (5.6,0.6)-- (5.6,1.9);
+
+\draw[green!50!black,canto suave] (3.55,0.2)-- (4.6,0.2)-- (4.6,0.45)--
+				(5.8,0.45)-- (5.8,1.8)-- (6.75,1.8)--
+				(6.75,3.5)-- (4.35,3.5)-- (4.35,1.8)--
+				(5.4,1.8)-- (5.4,0.8)-- (4.6,0.8)--
+				(4.6,1.05)-- (3.55,1.05)-- cycle;
+\draw[<-,green!50!black] (4.12,1.91) -- (3.61,2.35) node[left] {Enunciado};
+\node[blue,below right] at (4.5,3.5) {PL};
+\node[text width=1.5cm] at (1.5,3.5) {Ambiente To};
+\node[red,text width=5mm,below right] at (.1,1.7) {PR\\ To};
+\node at (.7,.5) {Ar};
+\end{tikzpicture}
