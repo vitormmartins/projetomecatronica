@@ -1,0 +1,21 @@
+\tikzset{>=latex,
+	every node/.style={font=\scriptsize}
+}
+\begin{tikzpicture}
+\draw[very thick,fill=red] (1.4,1.8) .. controls (1.7,1.2) and (2.0,1.2) .. (2.3,1.8);
+\draw (-0.3,-0.1) rectangle (4.4,1.9);
+\draw[very thick] (-0.2,0) rectangle (4.3,1.8);
+
+\draw[->,brown,very thick] (-1.6,0.5) -- (-0.2,0.5);
+\draw[brown,very thick,text width=2cm] (-0.8,0.3) -- (-0.8,0.7) node[above left=-3mm] {Vapor $3\,bar$\\ $500^\circ C$\\ $1.58\,kg/min$};
+\node[draw,circle,below] at (-0.8,0.3) {$1$};
+%vertical
+\draw[<-,very thick] (1.8,1.9) -- (1.8,2.8) node[above right] {Qponto VC};
+\draw[->,very thick] (4,1) -- (5,1) node[above right] {Wponto VC};
+\draw[->,blue,very thick] (4.3,0.2) -- (5.4,0.2) node[right] {$1\,bar$};
+\draw[blue,very thick] (4.9,.4) -- (4.9,0) node[draw,circle,below] {$2$};
+%no
+\node at (1.8,1.2) {$527^\circ C$};
+\node[text width=4cm] at (2,-.75) {Qponto $VC = 4.21\,kW$\\ $T_f = 527^\circ C$};
+\node[above right=-1mm] at (4.4,1.9) {$VC$};
+\end{tikzpicture}

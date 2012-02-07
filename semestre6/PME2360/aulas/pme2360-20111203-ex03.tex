@@ -1,0 +1,83 @@
+%pme2360
+\section{Exercicio 3}
+Em um transplante, há necessidade de aquecer e recircular 0.05kg/s do sangue hipotérmico, de 18ºC a 25ºC. Propõe-se fazer isso com um tbo duplo de cobre horizontal, isolado externamente, com diâmetros interno e externo do tubo interior, de 50 e 55mm, e diâmetro interno do tubo exterior, por onde passa a água, de 85mm. O calor específico do sangue é de 3500J/kg.K, e o coeficiente de transferência de calordo lado do sangue é de 100W/$m^2$ºC.
+
+a) Dispondo-se de 0,1kg/s de água a 60ºC, qual é o comprimento do tubo necessário?
+
+b) Ao final da cirurgia deseja-se recuperar a temperatura normal do sangue dos 18ºC para 36ºC. Qual a nova vazão de água necessária?
+
+\textit{Solução}
+
+Calculo da taxa calor trocado:
+
+\[\stackrel{.}{q} = \stackrel{.}{m}_{sangue}\times c_{sangue} \times \Delta T_{sangue}\]
+
+$\stackrel{.}{q} = 0,05 \times 3500 \times (25 - 18) = 1225W$
+
+Calculo da variação de temperatura da água:
+
+Como $\stackrel{.}{m}_{agua}\times c_{agua} >> \stackrel{.}{m}_{sangue}\times c_{sangue}$ e o sangue só varia 7ºC vamos avaliar as propriedades da água para 60ºC.
+
+Tabela A.6:
+
+$c = 4186J/kg.K$
+
+$\mu = 453\times 10^{-6}N.s/m_2$
+
+$k = 656\times 10^{-3}$
+
+\[\stackrel{.}{q} = \stackrel{.}{m}_{agua}\times c_{agua} \times \Delta T_{agua}\]
+
+$1225 = 0,1\times 4186\times ( 60 - T_{agua,2} )$
+
+$T_{agua,2} = 57$ºC
+
+Calculo da temperatura média logaritmica:
+
+\[\Delta T_{ml}= \frac{\Delta T_2 - \Delta T_1}{ln\left(\frac{\Delta T_2}{\Delta T_1}\right)}\]
+
+$\Delta T_{ml}= \frac{(57-18) - (60-25)}{ln\left(\frac{57-18}{60-25}\right)}= 37$ºC
+
+Calculo do coeficiente global de troca de calor:
+
+\[\frac{1}{U_{ext}A_{ext}}=\frac{1}{h_{ext}A_{ext}} + \frac{ln(D_{e}/D_{i})}{2\pi kL} + \frac{1}{h_{int}A_{int}}\]
+
+Para isso é necessário conhecer o $h_{ext}$. Hipótese: Escoamento desenvolvido na região anular e temperatura da superficie não isolada constante.
+
+Usá-se o diâmetro hidráulico $D_{h}= D_{e}-D_{i}$.
+
+\[Re=\frac{4\stackrel{.}{m}_{agua}}{\pi (D_{e}+D{i})\mu}\]
+
+$Re=\frac{4\times 0,1}{\pi \times (85+55)\times 10^{-3}\times 453\times 10^{-6}}= 2008$
+
+Portanto o escoamento é laminar e podemos usar a Tabela 8.2 para determinar Nu.
+
+Fazendo uma interpolação encontramos $Nu_{i}=5,5$ e portanto $h_{ext}=\frac{Nu_{i}k}{D_{h}}=120W/m^2$ºC
+
+Portanto da equação de $U_{ext}$.
+
+$\frac{1}{U_{ext}\pi 55\times 10^{-3}.L}=\frac{1}{120\pi 55\times 10^{-3}.L} + \frac{ln(55/50)}{2\pi 656\times 10^{-3}.L} + \frac{1}{100\pi 50\times 10^{-3}.L}$
+
+$U_{ext}= 43W/m^2$ºC
+
+Finalmente:
+
+\[\stackrel{.}{q} = U_{ext}A_{ext}\Delta T_{ml}\]
+
+$1225=43\times \pi \times 55\times 10^{-3}\times L\times 37$
+
+$L=4,46m$
+
+Para uma variação de 18ºC no sangue:
+
+Calculo do novo $\stackrel{.}{q}$
+
+$\stackrel{.}{q} = 0,05 \times 3500 \times (36 - 18) = 3150W$
+
+Calculo da nova vazão, considerando a mesma variação de temperatura da água.
+
+\[\stackrel{.}{q} = \stackrel{.}{m}_{agua}\times c_{agua} \times \Delta T_{agua}\]
+
+$3150 = \stackrel{.}{m}_{agua}\times 4186 \times 3$
+
+$\stackrel{.}{m}_{agua}= 0,25kg/s$

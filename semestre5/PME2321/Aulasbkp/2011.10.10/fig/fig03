@@ -1,0 +1,23 @@
+%bibliotecas
+\usetikzlibrary{decorations.markings}
+\begin{tikzpicture}[very thick,scale=1.5]
+%estilos
+\tikzset{>=latex,
+	flecha/.style={decoration={markings, mark=at position 0.5 with {\arrow{>}}},postaction={decorate}}
+}
+%eixos
+\draw[->] (-.5,0) -- (5,0) node[below] {$s$};
+\draw[->] (0,-.5) -- (0,3) node[right] {$T$};
+%grafico
+\begin{scope}[shift={(-.25,.4)}]
+\draw (0.85,0.21) .. controls (1.2,1.2) and (1.5,2.5) .. 
+	(2,2.5) .. controls (2.5,2.5) and (3.55,0.2) .. (3.55,0.2);
+%linhas
+\draw (0.31,0.12)-- (1.03,0.8)-- (3.25,0.8)-- (4.69,2.2) node[above right] {$P2$};
+\draw (0.5,0.88)-- (1.38,1.8)-- (2.7,1.8)-- (4,3) node[above right] {$P1$};
+%flechas
+\draw[flecha] (3.46,2.5) node[above] {$1$}-- (3.48,1.02) node[below right] {$2s$};
+\draw[flecha] (3.46,2.5)-- (4.25,1.78) node [below right] {$2$};
+\draw[|-|] (3.5,0.6)-- node[below] {Sg} (4.3,0.6);
+\end{scope}
+\end{tikzpicture}

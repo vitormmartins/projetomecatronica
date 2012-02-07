@@ -1,0 +1,161 @@
+% pme2321
+\chapter{2\textordfeminine Lei da Termodinâmica para Volume de Controle}
+
+\section{2\textordfeminine lei para volume de controle}
+
+\[
+\frac{dS_{VC}}{dt} = \sum_e \dot m_e s_e - \sum_s \dot m_s s_s + \int \frac{\delta \dot Q}{T} + \dot S_g
+\]
+
+\noindent onde
+
+$s_e =$ entropia na entrada
+
+$s_s =$ entropia na saída
+
+$\dot S_g =$ entropia total gerada
+
+\[
+\int{\frac{\delta \dot Q}{T}} = \sum{\frac{\dot Q}{T}}
+\]
+
+Casos particulares: regime permanente
+
+\[
+\sum_e \dot m_e s_e - \sum_s \dot m_s s_s + \sum \frac{\dot Q}{T} + \dot S_g = 0
+\]
+
+Para 1 entra e 1 saída $\to$  adiabático, reversível $\to s_e = s_s$.
+
+\section{Regime uniforme}
+
+\[
+\int_0^t {\frac{dS_{VC}}{dt}} = s_2 - s_1
+\]
+
+\[
+\int_0^t {\dot m_e s_e dt}  = s_e *\int_0^t {\dot m_e dt}  = m_e s_e 
+\]
+
+\[
+\int_0^t {\frac{\delta \dot Q}{T}dt} = \frac{Q}{T}
+\]
+
+\[
+\int_0^t {\dot S_g} = S_g
+\]
+
+\
+
+2\textordfeminine Lei:
+
+\[
+S_2  - S_1  = \sum\nolimits_e {m_e s_e }  - \sum\nolimits_s {m_s s_s }  + \sum {\frac{Q}{T}}  + S_g  = 0
+\]
+
+Trabalho associado ao escoamento de um fluido em regime permanente
+
+\
+
+1\textordfeminine Lei:
+
+\[
+\frac{{dE_{\forall C} }}{{dt}} = \sum {\dot m_e \left( {h_e  + \frac{{V_e^2 }}{2} + gz_e } \right)}  - \sum {\dot m_s \left( {h_s  + \frac{{V_s^2 }}{2} + gz_s } \right)}  + \dot Q - \dot W
+\]
+
+\[
+h_e - h_s + \frac{v_e^2}{2} - \frac{v_s^2}{2} + g(z_e - z_s) + q = w \qquad (I)
+\]
+
+\
+
+2\textordfeminine Lei:
+
+\[
+0 = \dot m s_e - \dot m s_s + \int {\frac{\delta \dot Q}{T}} + \dot S_g
+\]
+
+Portanto,
+
+\[
+\begin{gathered}
+  s_e - s_s + \int {\frac{\delta y}{\delta x}} + s_q = 0 \hfill \\
+  -ds + \frac{\delta q}{T} + \delta s_g = 0 \qquad (II) \hfill \\ 
+\end{gathered} 
+\]
+
+\[
+Tds = dh - vdp \qquad (III)
+\]
+
+
+De (II) em (III):
+
+\[
+\delta q + T \delta s_g = dh - vdp
+\]
+
+Integrando entre $e$ e $s$, obtemos:
+
+\[
+\begin{gathered}
+  \int_e^s {\delta q} + \int_e^s {T \delta s_g} = \int_e^s {dh} - \int_e^s {vdp} \hfill \\
+  q + \int_e^s {T \delta s_g} = h_s - h_e - \int_e^s {vdp} \qquad (IV) \hfill \\
+\end{gathered} 
+\]
+
+De (IV) em (I), temos:
+
+\[
+(h_e - h_s) + \left( \frac{V_e^2}{2} - \frac{V_s^2}{2} \right) + g(z_e - z_s) + (h_s - h_e) - \int_e^s {vdp} - \int_e^s {T \delta s_g} = w
+\]
+
+Portanto:
+
+\[
+w = \left( \frac{V_e^2}{2} - \frac{V_s^2}{2} \right) + g(z_e - z_s) - \int_e^s {vdp} - \int_e^s {T \delta s_g}
+\]
+
+Observação:
+
+$PdV =$ trabalho associado ao movimento de fronteira;
+$VdP =$ trabalho associado ao escoamento de um fluido.
+
+\section{Eficiência isentrópica}
+
+\tkzfig{figPME2321-20111010-03}{turbina}
+
+\[
+\eta_s = \frac{\text{pot\^encia real}}{\text{pot\^encia revers\'ivel}} = \frac{\dot m (h_1 - h_2)}{\dot m (h_1 - h_{2s})} = \frac{h_1 - h_2}{h_1 - h_{2s}}
+\]
+
+\tkzfig{figPME2321-20111010-02}{compressor}
+
+\newpage 
+
+\[
+\eta_s = \frac{\text{pot\^encia revers\'ivel}}{\text{pot\^encia real}} = \frac{\dot m (h_1 - h_{2s})}{\dot m (h_1 - h_{2})} = \frac{h_1 - h_{2s}}{h_1 - h_{2}}
+\]
+
+\begin{ex}
+\tkzfig{figPME2321-20111010-01i}{}
+
+\begin{enumerate}[a)]
+ \item $\frac{dS_{\text{sist}}}{dt} = \int{\frac{\delta \dot Q}{T}} + \dot S_g = 0$ (regime permanente)
+
+\[
+\dot S_g = - \frac{\dot Q}{T}
+\]
+
+E, da 1\textordfeminine Lei, $\dot Q - \dot W = 0$.
+
+  \item $\frac{dS_{VC}}{dt} = \dot m (s_e - s_s) + \sum {\frac{\dot Q}{T}} + \dot S_g$
+
+Mas
+
+$\sum {\frac{\dot Q}{T}} = 0$ (adiabático na fronteira do volume de controle)
+
+Portanto, $\dot S_g = \dot m(s_e - s_s) > 0$ (entropia gerada dentro do meu sistema).
+\end{enumerate}
+
+\end{ex}
